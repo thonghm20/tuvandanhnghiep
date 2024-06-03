@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header {
+    padding-top: 0.75rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.list {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
+
+.action {
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.list span {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    color: #3E7BFA;
+}
+.menu{
+    cursor: pointer;
+}
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+.menu,.close{
+    cursor: pointer;
+}
+@media (min-width:910px) {
+    .menu{
+        display: none;
+    }
+    .close{
+        display: none;
+    }
+}
+
+@media (max-width:910px){
+    .header{
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .list{
+        flex-direction: column;
+        top: 0;
+        right: -100%;
+        background-color: black;
+        padding: 90px 50px ;
+        position: fixed;
+        height: 100%;
+        width: 60%;
+        z-index: 2;
+        transition: all .4s;
+    }
+    .list.is-open{
+        right: 0;
+    }
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+    
+}
+.overlay.is-visible {
+    display: block;
+}
+
